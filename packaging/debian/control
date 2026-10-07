@@ -1,0 +1,14 @@
+Source: oo7z
+Section: utils
+Priority: optional
+Maintainer: openOODA-tools <ops@openooda.org>
+Standards-Version: 4.6.2
+Build-Depends: debhelper-compat (= 13)
+
+Package: oo7z
+Architecture: amd64
+Depends: libc6
+Description: 7Z HANDLER
+ 7-Zip multi-format container unpacker and lister with AES-256 encryption.
+ Capability-bounded openOODA utility with zero ambient authority,
+ oote theme palettes, and native Model Context Protocol (MCP) surface.

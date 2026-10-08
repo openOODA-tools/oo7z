@@ -4,7 +4,7 @@
 # "7-Zip multi-format container unpacker and lister with AES-256 encryption."
 #
 # Usage:
-#   curl -fsSL https://openooda-too7z.github.io/oo7z/install.sh | bash
+#   curl -fsSL https://openooda-tools.github.io/oo7z/install.sh | bash
 #
 # Options:
 #   --prefix <dir>       Installation directory (default: /usr/local/bin or ~/.local/bin)
@@ -18,10 +18,10 @@
 
 set -eu
 
-REPO="openOODA-too7z/oo7z"
+REPO="openOODA-tools/oo7z"
 GITHUB_URL="https://github.com/${REPO}"
-VERSION_PIN="v0.1.0"
-RAW_VERSION="0.1.0"
+VERSION_PIN="v0.2.0"
+RAW_VERSION="0.2.0"
 
 if [ -t 1 ] && [ "${NO_COLOR:-}" = "" ] && [ "${TERM:-dumb}" != "dumb" ]; then
     CYAN="\033[38;5;51m"

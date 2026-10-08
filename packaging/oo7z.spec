@@ -1,8 +1,8 @@
 Name:           oo7z
-Version:        0.1.0
+Version:        0.2.0
 Release:        1%{?dist}
 Summary:        7-Zip multi-format container unpacker and lister with AES-256 encryption.
-License:        ASL 2.0
+License:        Apache-2.0
 URL:            https://github.com/openOODA-tools/oo7z
 Source0:        oo7z-linux-x86_64
 Source1:        uninstall.sh
@@ -24,5 +24,5 @@ install -m 0755 %{SOURCE1} %{buildroot}/usr/bin/oo7z-uninstall
 /usr/bin/oo7z-uninstall
 
 %changelog
-* Wed Oct 07 2026 openOODA-tools <ops@openooda.org> - 0.1.0-1
-- Initial sovereign blueprint scaffolding
+* Wed Oct 07 2026 openOODA-tools <ops@openooda.org> - 0.2.0-1
+- Elevate to pure openOODA 0.2.0 with MCP server and multi-distro packaging parity

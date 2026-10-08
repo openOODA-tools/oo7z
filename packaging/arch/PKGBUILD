@@ -1,7 +1,7 @@
 # Maintainer: openOODA-tools <ops@openooda.org>
 pkgname=oo7z-bin
 _pkgname=oo7z
-pkgver=0.1.0
+pkgver=0.2.0
 pkgrel=1
 pkgdesc="7-Zip multi-format container unpacker and lister with AES-256 encryption."
 arch=('x86_64')

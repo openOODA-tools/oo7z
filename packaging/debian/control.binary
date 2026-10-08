@@ -1,0 +1,10 @@
+Package: oo7z
+Version: 0.2.0-1
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: openOODA-tools <ops@openooda.org>
+Description: 7-Zip multi-format container unpacker and lister with AES-256 encryption
+ A sovereign 7-Zip container unpacker and lister written in pure openOODA, featuring
+ zero ambient authority, path-traversal resistant safe extraction, themed table formatting
+ via oote palettes, and a Model Context Protocol (MCP) stdio server.

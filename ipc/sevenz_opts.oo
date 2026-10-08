@@ -1,0 +1,83 @@
+// # 7-Zip Options - Command Line Flags and Operational Configuration
+//
+// Logline: Decodes command line arguments into operational modes for oo7z.
+//
+// Setup: Pure value type and parser. Zero ambient authority.
+//
+// Beats:
+//   1. Define SevenZOpts struct holding action mode, archive path, and flags.
+//   2. Provide safe default initializer.
+//   3. Parse argument vector into validated SevenZOpts model.
+
+pub type SevenZOpts = struct {
+    list_mode: Bool,
+    test_mode: Bool,
+    extract_mode: Bool,
+    archive_file: String,
+    output_dir: String,
+    json_mode: Bool,
+    mcp_mode: Bool,
+    help_mode: Bool,
+    version_mode: Bool,
+    theme: String,
+    color: String,
+    error_msg: String
+};
+
+pub fn sevenz_opts_default() -> SevenZOpts {
+    return SevenZOpts {
+        list_mode: false,
+        test_mode: false,
+        extract_mode: false,
+        archive_file: "",
+        output_dir: ".",
+        json_mode: false,
+        mcp_mode: false,
+        help_mode: false,
+        version_mode: false,
+        theme: "",
+        color: "auto",
+        error_msg: ""
+    };
+}
+
+pub fn parse_sevenz_args(args: List[String]) -> SevenZOpts {
+    let mut opts: SevenZOpts = sevenz_opts_default();
+    let n: Int = list_len(args);
+    let mut i: Int = 0;
+    while i < n {
+        let arg: String = list_get(args, i);
+        if arg == "-h" || arg == "--help" {
+            opts.help_mode = true;
+            return opts;
+        } else if arg == "-v" || arg == "--version" {
+            opts.version_mode = true;
+            return opts;
+        } else if arg == "--mcp" {
+            opts.mcp_mode = true;
+        } else if arg == "--json" {
+            opts.json_mode = true;
+        } else if arg == "-l" || arg == "--list" {
+            opts.list_mode = true;
+        } else if arg == "-t" || arg == "--test" {
+            opts.test_mode = true;
+        } else if arg == "-x" || arg == "--extract" {
+            opts.extract_mode = true;
+        } else if arg == "-o" || arg == "--output" {
+            i = i + 1;
+            if i < n { opts.output_dir = list_get(args, i); }
+        } else if arg == "--theme" {
+            i = i + 1;
+            if i < n { opts.theme = list_get(args, i); }
+        } else if arg == "--color" {
+            i = i + 1;
+            if i < n { opts.color = list_get(args, i); }
+        } else if !str_starts_with(arg, "-") {
+            if opts.archive_file == "" {
+                opts.archive_file = arg;
+            }
+        }
+        i = i + 1;
+    }
+    return opts;
+}

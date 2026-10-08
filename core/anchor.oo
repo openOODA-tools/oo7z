@@ -1,0 +1,12 @@
+// # 7-Zip Core Subsystem Anchor
+//
+// Logline: Re-exports header parser, path traversal guard, and archive operations.
+//
+// Setup: Pure shim re-exporting core models and algorithms.
+//
+// Beats:
+//   1. Re-export SevenZHeader and path validation functions.
+//   2. Re-export SevenZEntry and archive inspection routines.
+
+import "header.oo";
+import "archive.oo";
